@@ -1,0 +1,33 @@
+version: '3.7'
+services:
+    rabbitmq:
+        container_name: rabbitmq
+        image: rabbitmq:management-alpine
+        hostname: my-rabbit
+        ports:
+            - 5672:5672
+            - 15672:15672
+
+    zomato_app:
+        container_name: zomato
+        build: zomato/app
+        environment:
+            HOSTNAME: my-rabbit
+        ports:
+            - 5000:5000
+
+    restaurant_app:
+        container_name: restaurant
+        build: restaurant/app
+        environment:
+            HOSTNAME: my-rabbit
+        ports:
+            - 5001:5001
+
+    delivery_app:
+        container_name: delivery
+        build: delivery/app
+        environment:
+            HOSTNAME: my-rabbit
+        ports:
+            - 5002:5002

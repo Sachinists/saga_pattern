@@ -27,12 +27,12 @@ def thread_function():
 
 @app.route('/ping')
 def ping():
-    return 'Welcome to restaurant application!', 200
+    return 'Welcome to delivery application!', 200
 
 
 @app.route('/publish/<message>', methods=['POST'])
 def publish(message):
-    RabbitClient.publish_message(message, queue_name="zomato_app_queue")
+    RabbitClient.publish_message(message, queue_name="delivery_queue")
     return "Successfully processed message: %s" % message, 201
 
 
@@ -58,7 +58,7 @@ def update_order(res_id, status):
     if response:
         reply_to = response["reply_to"]
         response = Order.remove_keys(response, ["id", "reply_to"])
-        response["reply_from"] = "restaurant_service"
+        response["reply_from"] = "delivery_service"
         if reply_to:
             RabbitClient.publish_message(message=json.dumps(response), routing_key=reply_to, exchange_name="")
     return response, 200 if response else 204
@@ -74,7 +74,7 @@ if __name__ == '__main__':
     thread = threading.Thread(target=thread_function, name="rabbit-thread")
     thread.start()
     try:
-        app.run('0.0.0.0', port=5001, debug=True, use_reloader=False)
+        app.run('0.0.0.0', port=5002, debug=True, use_reloader=False)
     except KeyboardInterrupt:
         print('Interrupted! terminating flask app', flush=True)
         func = request.environ.get('werkzeug.server.shutdown')

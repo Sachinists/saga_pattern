@@ -1,4 +1,5 @@
 import json
+import os
 
 import pika
 
@@ -33,12 +34,15 @@ class RabbitClient:
         }
 
     @classmethod
-    def connect(cls, hostname="localhost", queue_name=queue_name):
+    def connect(cls):
+        hostname = os.getenv("HOSTNAME", "localhost")
+        url = f"amqp://guest:guest@{hostname}:5672"
+
         print(' [*] Connecting to server ...', flush=True)
         print(f' [*] Hostname: {hostname} ...', flush=True)
-        print(f' [*] Queue name: {queue_name} ...', flush=True)
+        print(f"connecting to: {url}", flush=True)
         cls.connection = AsyncioConnection(
-            pika.URLParameters("amqp://guest:guest@localhost:5672"),
+            pika.URLParameters(url),
             on_open_callback=cls.on_connection_open,
             on_open_error_callback=cls.on_connection_open_error,
             on_close_callback=cls.on_connection_closed

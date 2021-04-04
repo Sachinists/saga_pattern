@@ -1,9 +1,8 @@
 version: '3.7'
 services:
-#    rabbitmq:
-#        container_name: rabbitmq
+#    delivery_rabbitmq:
+#        container_name: delivery_rabbitmq
 #        image: rabbitmq:management-alpine
-#        hostname: my-rabbit
 #        ports:
 #            - 5672:5672
 #            - 15672:15672
@@ -11,10 +10,10 @@ services:
     app:
         build: app
 
-    nginx:
-        container_name: nginx
+    delivery_nginx:
+        container_name: delivery_nginx
         build: nginx
         ports:
-            - 5003:5003
+            - 5005:5005
         depends_on:
             - app

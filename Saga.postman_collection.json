@@ -1,0 +1,394 @@
+{
+	"info": {
+		"_postman_id": "bce1cf08-8683-4cab-b8c8-55423b60dc0b",
+		"name": "Saga",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Restaurant",
+			"item": [
+				{
+					"name": "Update Order Status",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/order/0/accepted",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"order",
+								"0",
+								"accepted"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Publish Message",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/publish/test",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"publish",
+								"test"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/orders",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get order by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/order/0",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"order",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/order/pizza",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"order",
+								"pizza"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ping",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/ping",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"ping"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rabbit Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/rabbit",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"rabbit"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Delivery",
+			"item": [
+				{
+					"name": "Update Order Status",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/order/0/accepted",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"order",
+								"0",
+								"accepted"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Publish Message",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/publish/test",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"publish",
+								"test"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/orders",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get order by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/order/0",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"order",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/order/pizza",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"order",
+								"pizza"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ping",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/ping",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"ping"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rabbit Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/rabbit",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"rabbit"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Zomato",
+			"item": [
+				{
+					"name": "Ping",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/ping",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"ping"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rabbit Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/rabbit",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"rabbit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rabbit Toggle",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/rabbit-toggle",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"rabbit-toggle"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/order/pizza",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"order",
+								"pizza"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/orders",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Order details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/order-details/0",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"order-details",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Order details with SAGA props",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/order-details-full/0",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"order-details-full",
+								"0"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

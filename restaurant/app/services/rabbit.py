@@ -36,7 +36,8 @@ class RabbitClient:
     @classmethod
     def connect(cls):
         hostname = os.getenv("HOSTNAME", "localhost")
-        url = f"amqp://guest:guest@{hostname}:5672"
+        port = os.getenv("RABBIT_PORT", "5673")
+        url = f"amqp://guest:guest@{hostname}:{port}"
 
         print(' [*] Connecting to server ...', flush=True)
         print(f' [*] Hostname: {hostname} ...', flush=True)

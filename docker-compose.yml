@@ -5,14 +5,15 @@ services:
         image: rabbitmq:management-alpine
         hostname: my-rabbit
         ports:
-            - 5672:5672
-            - 15672:15672
+            - 5673:5672
+            - 15671:15672
 
     zomato_app:
         container_name: zomato
         build: zomato/app
         environment:
-            HOSTNAME: my-rabbit
+            HOSTNAME: 192.168.0.102
+            RABBIT_PORT: 5673
         ports:
             - 5000:5000
 
@@ -20,7 +21,8 @@ services:
         container_name: restaurant
         build: restaurant/app
         environment:
-            HOSTNAME: my-rabbit
+            HOSTNAME: 192.168.0.102
+            RABBIT_PORT: 5673
         ports:
             - 5001:5001
 
@@ -28,6 +30,7 @@ services:
         container_name: delivery
         build: delivery/app
         environment:
-            HOSTNAME: my-rabbit
+            HOSTNAME: 192.168.0.102
+            RABBIT_PORT: 5673
         ports:
             - 5002:5002

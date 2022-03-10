@@ -43,7 +43,6 @@ def rabbit_details():
 
 @app.route('/orders')
 def get_all_orders():
-    # test after changing username
     return jsonify(Order.get_all_orders()), 200
 
 

@@ -43,6 +43,7 @@ def rabbit_details():
 
 @app.route('/orders')
 def get_all_orders():
+    # test after changing username
     return jsonify(Order.get_all_orders()), 200
 
 
@@ -54,7 +55,6 @@ def get_order_by_id(order_id):
 
 @app.route('/order/<res_id>/<status>', methods=['PUT'])
 def update_order(res_id, status):
-    # test second
     response = Order.update_order_status_by_id(res_id, status)
     if response:
         reply_to = response["reply_to"]

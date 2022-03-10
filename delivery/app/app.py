@@ -54,7 +54,6 @@ def get_order_by_id(order_id):
 
 @app.route('/order/<res_id>/<status>', methods=['PUT'])
 def update_order(res_id, status):
-    # test commit
     response = Order.update_order_status_by_id(res_id, status)
     if response:
         reply_to = response["reply_to"]
